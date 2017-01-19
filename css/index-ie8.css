@@ -1,0 +1,222 @@
+/* 初始化CSS  重置浏览器样式*/
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img,button,input { margin:0; padding:0; }
+fieldset, img,button,input { border:none; outline-style:none; } /*为了照顾ie6 链接图片有边框*/
+ul, ol { list-style:none; }
+input {  font-family: "SimSun","宋体";}
+img{vertical-align:top; display: block;} /*取消图片底侧缝隙*/
+select, input { vertical-align:middle; }
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; }
+table { border-collapse:collapse; }
+i,em{font-style:normal;} /*让倾斜的变正常*/
+s,del{ text-decoration:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%; font-weight:normal;}
+body {font-size:12px; color:#3C3C3C;}
+.clearfix:after { content:"."; display:block; height:0; visibility:hidden; clear:both; }
+.clearfix { zoom:1; }
+.clearit { clear:both; height:0; font-size:0; overflow:hidden; }
+a { color:#666; text-decoration:none; }
+
+a:hover { color:#f40; text-decoration:none; }
+
+.lines{display: none;}
+.shadow{display: none;}
+.open {display: none!important;}
+.section1 .box-content .content-in .subject{display: none;}
+.section1{
+	position: relative;
+}
+
+.header  .online{
+	background: url(../images/ie/qq.png) no-repeat 64px center;
+}
+.section1 .box{
+	width: 1000px;
+	height: 600px;
+	left:50%;
+	top:50%;
+	margin:-300px 0 0 -500px;
+	background: url('../images/ie/open.png') center center no-repeat ;
+}
+.section1 .box-content{width: 100%; position: static;}
+.section1 .box-content .content-in{
+	background:none;
+	width: 100%;
+	padding-top:0;
+	margin:0;
+	position: static;
+
+}
+.section1 .box-content .content-in h4{
+	margin-top:184px;
+	color:#fff;
+	font-size:20px;
+	width: 100%;
+	text-align: center;
+	font-family: "\5FAE\8F6F\96C5\9ED1";
+}
+
+.section1 .box-content .content-in .leader{
+	color:#EE8D9A;
+	font-size:16px;
+	line-height: 32px;
+	display: block;
+	margin-top:96px;
+
+}
+br{display: none;}
+.section1 .box-content .content-in .pass{
+	display: block;
+	font-size:18px;
+	color:#EE8D9A;
+	font-family: \5FAE\8F6F\96C5\9ED1;
+	font-weight: bolder;
+
+}
+
+.section .fbox{
+	width: 1000px;
+	height: 300px;
+	left:50%;
+	top:50%;
+	margin:-150px 0 0 -500px;
+	/*background-color:pink;*/
+	position: absolute;
+}
+
+.section .fbox .box{
+	width: 300px;
+	height: 300px;
+	background: url(../images/ie/android.png) no-repeat center center;
+	position: static;
+	float:left;
+}
+
+.section .fbox .info{
+	position: static;
+	width: 600px;
+	height: 256px;
+	float: right;
+	padding-top:43px;
+
+}
+
+.section .fbox .info img{
+	display: block;
+}
+
+.section .fbox .info .gkk-name{
+	margin-bottom:8px;
+	margin-top:5px;
+}
+.section .info br{
+	display: block;
+}
+.section .info .time{
+	float: left;
+	width: 80px;
+	height: 24px;
+	background: url(../images/ie/time.png) no-repeat;
+	text-align: center;
+	line-height: 24px;
+	margin-right:10px;
+}
+
+.section .info  p{
+	margin-top:7px;
+	line-height: 20px;
+	margin-bottom:13px;
+}
+
+.section .info a{
+	float: left;
+	width: 112px;
+	height: 33px;
+	background: url(../images/ie/bm.png) no-repeat;
+	text-align: center;
+	line-height: 33px;
+	color:#fff;
+	border:none;
+	margin-right:15px;
+}
+
+.section .info a:hover{
+	background: url(../images/ie/bm1.png) no-repeat;
+	color:#19034f;
+
+}
+
+
+.section3 .fbox .box{
+	background-image: url(../images/ie/ui.png);
+}
+
+.section4 .fbox .box{
+	background-image: url(../images/ie/apple.png);
+}
+
+.section5 .fbox .box{
+	background-image: url(../images/ie/php.png);
+}
+
+
+.show{
+	width: 920px;
+	height: 200px;
+	position: absolute;
+	left:50%;
+	top:50%;
+	margin-left:-460px;
+	margin-top:-100px;
+
+}
+
+.show li{
+	width: 162px;
+	height: 200px;
+	margin:0 31px;
+
+}
+
+.show LI .pic-box {
+	width: 162px;
+	height: 162px;
+	background:  url(../images/ie/env.png) no-repeat;
+	margin-bottom:5px;
+}
+
+.show li .img-title{
+	color:#fff;
+	font-size: 20px;
+	font-family: \5FAE\8F6F\96C5\9ED1;
+}
+
+.show .xk .pic-box {
+	background-image: url(../images/ie/xk.png);
+}
+
+.show .fw .pic-box {
+	background-image: url(../images/ie/mn.png);
+}
+
+.show .xk .pic-box {
+	background-image: url(../images/ie/map.png);
+}
+
+
+.ie7{
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
