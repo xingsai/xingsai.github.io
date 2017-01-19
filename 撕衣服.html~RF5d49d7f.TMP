@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+	<style type="text/css">
+	 body{
+		background:#000; 
+	 }
+	.xk{
+		
+		width:320px;
+		height:480px;
+		background:url(g15_back.jpg);
+		margin:200px auto;
+	}
+	font{
+		color:yellow;	
+	}
+
+</style>
+</head>
+
+<body> 
+	<marquee  scrollamount="20"><font>QQ:724228803 ---春哥----</font></marquee>
+	<div   class="xk">
+    	<canvas  id="mycanvas" width="320px" height="480px"></canvas>
+    </div>
+    <script type="text/javascript">
+    	var myCanvas = doucument.getElementById('mycanvas');
+		var gary=myCanvas.getContext('2d');
+		gary.beginPath();
+		gary.fillStyle = "#999";
+		gary.fillRec(0, 0, 320, 480);
+		gary.closePath();
+		
+    </script>
+</body>
+</html>

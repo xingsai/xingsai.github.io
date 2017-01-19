@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+	<meta name="viewport" content="initial-scale=1.0, width=device-width,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+	 body{
+		background:#000; 
+	 }
+	.xk{
+		
+		width:320px;
+		height:480px;
+		background:url(g15_back.jpg);
+		margin:200px auto;
+	}
+	font{
+		color:yellow;	
+	}
+
+</style>
+
+
+</head>
+
+<body> 
+<!--	<marquee  scrollamount="20"><font>QQ:724228803 ---春哥----</font></marquee>-->
+	<div   class="xk">
+    	<canvas  id="mycanvas" width="320px" height="480px"></canvas>
+    </div>
+    
+     <script type="text/javascript" >
+ 	$(function(){
+
+             
+
+            var canvas=document.getElementById('myCanvas');
+
+            var ctx=canvas.getContext('2d');
+
+            ctx.fillStyle='#aaaaaa';        //设置覆盖层的颜色
+
+            ctx.fillRect(0,0,204,104);        //设置覆盖的区域
+
+             
+
+            //给整个页面绑定鼠标事件
+
+            $(this).on("mousedown",function(){
+
+                    //点点击鼠标时即调用一次鼠标移动事件
+
+                    mouseMove();
+
+                    //当鼠标按下时激活鼠标移动监听
+
+                    document.onmousemove = mouseMove; 
+
+            });
+
+            $(this).on("mouseup",function(){
+
+                    //当鼠标按键弹起时取消鼠标移动监听
+
+                    document.onmousemove = null; 
+
+            });
+
+            function mouseMove(ev) 
+
+            { 
+
+                    ev= ev || window.event; 
+
+                    var mousePos = mouseCoords(ev); //获取全局坐标
+
+                    var mouse = mouseOver(mousePos);
+
+                    document.getElementById("show").value = mouse.x+":"+mouse.y;                 
+
+                    var r=10;        //半径
+
+                    for(var i=0;i<=r;i++){
+
+                            //mouse.x++;
+
+                            for(var j=0;j<=r;j++){
+
+                                     
+
+                                    var result1 = r*r - (i*i+j*j);
+
+                                    //document.getElementById("show2").value =result1; 
+
+                                    if(result1>=0){        
+
+                                            ctx.clearRect(mouse.x+i-9,mouse.y+j,1,1);
+
+                                            ctx.clearRect(mouse.x-i-9,mouse.y+j,1,1);
+
+                                            ctx.clearRect(mouse.x-i-9,mouse.y-j,1,1);
+
+                                            ctx.clearRect(mouse.x+i-9,mouse.y-j,1,1);
+
+                                    }
+
+                            }
+
+                    }
+
+            } 
+
+            /*清除canvas上指定坐标的像素*/
+
+            function clear(x,y){
+
+                    ctx.clearRect(x,y,1,1);
+
+            }
+
+            /*获取鼠标当前坐标 --相对于页面*/
+
+            function mouseCoords(ev) 
+
+            { 
+
+                    if(ev.pageX || ev.pageY){ 
+
+                            return {x:ev.pageX, y:ev.pageY}; 
+
+                    } 
+
+                    return { 
+
+                    x:ev.clientX + document.body.scrollLeft - document.body.clientLeft, 
+
+                    y:ev.clientY + document.body.scrollTop - document.body.clientTop 
+
+                    };
+
+            } 
+
+            /*转换鼠标的坐标为相对于canvas*/
+
+            function mouseOver(ev1){
+
+                    return {
+
+                            x:ev1.x-800,
+
+                            y:ev1.y-50
+
+                    }
+
+            }
+
+    });
+
+ 	</script>
+
+</body>
+</html>
