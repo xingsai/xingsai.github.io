@@ -1,56 +1,68 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-<link rel="stylesheet" href="<%=path%>/offcial/css/common.css?mt=2" />
-<link rel="stylesheet" href="./swiper.min.css">
-<link rel="stylesheet" href="./nianbao.css">
-<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script><!--调用jQuery-->  
-<script src="<%=path%>/offcial/js/common.js"></script>
-<script src="./swiper.jquery.min.js"></script>
-<script src="./nianbao.js"></script>
-
+    <meta charset="UTF-8">
+    <title>磨途歌画板测试</title>
 </head>
 <body>
-<section class="u-arrow-top" id="u-arrow-top">
-  <div class="pre-wrap-bottom"> 
-  </div>
-</section>
-<section class="u-arrow-bottom" id="u-arrow-bottom">
-  <div class="pre-wrap-bottom">    
-  </div>
-</section>
+<canvas id="can" width="300" height="600" style="border:1px solid black">Canvas画板</canvas>
+<form action="save.php" method="post">
+    <input type="hidden" value="" name="data">
+    <button>提交</button>
+</form>
+<script src="https://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"></script>
+<script>
+var canvas = $('#can'),//获取canvas元素
+    pan = canvas[0].getContext("2d"),//获取2D图像API接口
+    paint = false,//鼠标左键是否在画板区域按下
+    x,
+    y;
+pan.strokeStyle = "#000000";//设置画笔颜色
+pan.lineJoin = "round";//设置画笔轨迹基于圆点拼接
+pan.lineWidth = 4;//设置画笔粗细
+ 
+//监控画板上的鼠标左键按下
+canvas.mousedown(function(e){
+    paint = true;
+    x = e.offsetX;
+    y = e.offsetY;
+    pan.beginPath();
+    pan.moveTo(x,y);
+});
+//移动鼠标
+canvas.mousemove(function(e){
+    if(paint) {
+        var nx = e.offsetX,
+            ny = e.offsetY;
+        pan.lineTo(x, y);
+        pan.stroke();
+        x = nx;
+        y = ny;
+    }
+});
+//释放鼠标左键
+canvas.mouseup(function(e){
+    paint = false;
+});
+//鼠标离开画板
+canvas.mouseleave(function(e){
+    paint = false;
+});
+//提交数据处理
+$('form').submit(function() {
+    var data = canvas[0].toDataURL("image/png");//把canvas画板上的内容转成指定格式图片数据，并进行Base64编码
+    $('input').val(data);
+});
 
-   <div class="swiper-container">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide img1">
-          <p class="year" id="one-year">0</p>
-          <p class="month" id="one-month">0</p>
-          <p class="day" id="one-day">0</p>
-          <p class="friend" id="one-friend">0</p>
-        </div>
-        <div class="swiper-slide img2">
-          <p class="two-day" id="two-day">0</p>
-          <p class="two-num" id="two-num">0</p>
-        </div>
-        <div class="swiper-slide img3">
-          <p class="good-module" id="good-module"></p>
-          <p class="bad-module" id="bad-module"></p>
-        </div>
-        <div class="swiper-slide img4"></div>
-        <div class="swiper-slide img5">
-          <p class="five-visit" id="five-visit">0</p>
-          <p class="five-news" id="five-news">0</p>
-          <p class="five-derict" id="five-derict">0</p>
-        </div>
-        <div class="swiper-slide img6"></div>   
-    </div>
-    <!-- 如果需要分页器 -->
-   <!--  <div class="swiper-pagination"></div> -->
-</div>
-  <script>   
-   var strAccount = "${adminUserLoginInfo.strAccount}";// 当前登陆者账号
-  </script>
+
+
+//清空画板
+function clearCanvas()  
+{  
+    var c=document.getElementById("myCanvas");  
+    var cxt=c.getContext("2d");  
+    cxt.clearRect(0,0,c.width,c.height);  
+}
+</script>
 </body>
 </html>
