@@ -22,7 +22,7 @@ pan.lineJoin = "round";//设置画笔轨迹基于圆点拼接
 pan.lineWidth = 4;//设置画笔粗细
  
 //监控画板上的鼠标左键按下
-canvas.mousedown(function(e){
+canvas.touchstart(function(e){
     paint = true;
     x = e.offsetX;
     y = e.offsetY;
@@ -30,7 +30,7 @@ canvas.mousedown(function(e){
     pan.moveTo(x,y);
 });
 //移动鼠标
-canvas.mousemove(function(e){
+canvas.touchmove(function(e){
     if(paint) {
         var nx = e.offsetX,
             ny = e.offsetY;
@@ -41,7 +41,7 @@ canvas.mousemove(function(e){
     }
 });
 //释放鼠标左键
-canvas.mouseup(function(e){
+canvas.touchend(function(e){
     paint = false;
 });
 //鼠标离开画板
