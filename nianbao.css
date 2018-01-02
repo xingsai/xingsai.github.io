@@ -1,0 +1,201 @@
+@font-face {
+  font-family:first ;
+  src: url(./fontfamily.TTF);
+}
+body{
+  font-family: first;
+  font-size: 30px;
+}
+
+*{
+  margin:0;
+  padding: 0;
+}
+  html,body{
+    height:100%;
+    width:100%;
+  }
+  .swiper-container {
+      height:100%;
+      width:100%;
+  }  
+  .img1{
+    background: url(./1.png) no-repeat center center;
+    background-size:100% 100%;
+    position: relative;
+    color:#6D514B;
+  }
+  .img2{
+    background: url(./2.png) no-repeat center center;
+     background-size:100% 100%;
+    position: relative;
+    color:#715C3F;
+  }
+  .img3{
+    background: url(./3.png) no-repeat center center;
+    background-size:100% 100%;
+    position: relative;
+    color:#6A5E3B;
+  }
+  .img4{
+    background: url(./4.png) no-repeat center center;
+    background-size:100% 100%;
+    position: relative;
+  }
+  .img5{
+    background: url(./5.png) no-repeat center center;
+     background-size:100% 100%;
+    position: relative;
+    color:#5D5A6F;
+  }
+  .img6{
+    background: url(./6.png) no-repeat center center;
+    background-size:100% 100%;
+    position: relative;
+  }
+ .img1  .year{
+        position: absolute;
+        top: 6%;
+        left: 9%;
+        height: 5.2%;
+        line-height: 1;
+        width: ;
+        text-align: center;
+        width: 27%;
+  }
+  .img1 .month{
+       position: absolute;
+        top: 6%;
+        left: 42%;
+        height: 5.2%;
+        line-height: 1;
+        text-align: center;
+        width: 17%;
+  }
+ .img1  .day{
+    position: absolute;
+    top: 6%;
+    left: 67%;
+    height: 5.2%;
+    line-height: 1;
+    text-align: center;
+    width: 18%;
+  }
+ .img1  .friend{
+       position: absolute;
+      top: 60%;
+      left: 39%;
+      height: 5.2%;
+      line-height: 1;
+      text-align: center;
+      width: 36%;
+  }
+ .img2 .two-day{
+        position: absolute;
+        top: 37%;
+        left: 61%;
+        height: 5.2%;
+        line-height: 1;
+        text-align: center;
+        width: 26%;
+  }
+ .img2  .two-num{
+        position: absolute;
+        top: 60%;
+        left: 24%;
+        height: 5.2%;
+        line-height: 1;
+        text-align: center;
+        width: 33%;
+  }
+ .img3 .good-module{
+        position: absolute;
+        top: 16%;
+        left: 44%;
+        height: 5.2%;
+        line-height: 1;
+        text-align: center;
+        width: 33%;
+        
+  }
+  .img3 .bad-module{
+        position: absolute;
+        top: 56%;
+        left: 46%;
+        height: 5.2%;
+        line-height: 1;
+        text-align: center;
+        width: 33%;
+       
+  }
+ .img5 .five-visit{
+      position: absolute;
+      top: 11%;
+      left: 40%;
+      height: 5.2%;
+      line-height: 1;
+      text-align: center;
+      width: 36%;
+  }
+  .img5 .five-news{
+      position: absolute;
+      top: 20%;
+      left: 48%;
+      height: 5.2%;
+      line-height: 1;
+      text-align: center;
+      width: 28%;
+  }
+  .img5 .five-derict{
+      position: absolute;
+      top: 29%;
+      left: 33%;
+      height: 5.2%;
+      line-height: 1;
+      text-align: center;
+      width: 25%;
+  }
+
+
+.u-arrow-top{
+   position: absolute;
+    top: 10px;
+    left: 50%;
+    z-index: 150;
+    width: 16px;
+    height: 16px;
+    display: none;
+}
+.u-arrow-bottom {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    z-index: 150;
+    width: 16px;
+    height: 16px;
+    transform:rotate(180deg);  
+}
+
+.pre-wrap-bottom {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    background:url(./arrow.png) no-repeat center center; 
+    background-size: 16px 16px;
+    -webkit-animation: start 1.5s infinite ease;
+    animation: start 1.5s infinite ease;
+}
+
+
+@keyframes start {
+                 0% {
+                    opacity: 1;
+                    filter: alpha(opacity=100)
+                }
+                100% {
+                    opacity: 0;
+                    filter: alpha(opacity=0);
+                    -webkit-transform: translate3d(0,60%,0);
+                    transform: translate3d(0,60%,0)
+                }
+}
