@@ -1,0 +1,2 @@
+webpackJsonp([28],{402:function(n,e,t){var r=t(99)(null,t(996),null,null);n.exports=r.exports},996:function(n,e){n.exports={render:function(){var n=this,e=n.$createElement;return(n._self._c||e)("section",[n._v("积分商管理...\n")])},staticRenderFns:[]}}});
+//# sourceMappingURL=integral.177b3197792cbde67588.js.map
